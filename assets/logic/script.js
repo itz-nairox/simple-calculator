@@ -1,15 +1,19 @@
+//Define variables and objects
 let screen = document.querySelector('.screen');
 let numberButtons = document.querySelectorAll('.number');
 let screenContent = '0';
 let functionalButtons = document.querySelectorAll('.functional');
-let func = '';
+let oprator = '';
 let firstNumber = '';
 
 
+//Add event listener for each number button
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
+
         let buttonNumber = Number(button.innerHTML);
 
+        //Prevent two zero bug
         if (screenContent == '0'){
             updateScreen(buttonNumber)
         }else{
@@ -20,59 +24,64 @@ numberButtons.forEach(button => {
 })
 
 
+//Add event listener for each non number button
 functionalButtons.forEach(button => {
     button.addEventListener('click', () => {
         if (button.innerHTML == "C"){
             updateScreen('0')
-            func = '';
-        }else if (button.innerHTML == "+"){
-            func = '+';
-            firstNumber = screenContent;
-            updateScreen('0');
-        }else if (button.innerHTML == "−"){
-            func = '−';
-            firstNumber = screenContent;
-            updateScreen('0');
-        }else if (button.innerHTML == "×"){
-            func = '×';
-            firstNumber = screenContent;
-            updateScreen('0');
-        }else if (button.innerHTML == "÷"){
-            func = '÷';
-            firstNumber = screenContent;
-            updateScreen('0');
-        }else if (button.innerHTML == "=" && func != ''){
-            if (func == '%'){
-                let secondNumber = screenContent;
-                let result = eval(`(${secondNumber}/100) * ${firstNumber}`);
-
-                updateScreen(result);
-                func = '';
-
-            }else{
-
-                let secondNumber = screenContent;
-                let result = eval(`${Number(firstNumber)}${func}${Number(secondNumber)}`.replaceAll('÷', '/').replaceAll('×', '*').replaceAll('−', '-'));
-                
-                updateScreen(result);
-                func = '';
-            }
+            oprator = '';
+        }else if (button.innerHTML == "=" && oprator != ''){
+            let secondNumber = screenContent;
+            result = calculateResult(firstNumber, secondNumber);
+            updateScreen(result);
+            oprator = '';
         }else if (button.innerHTML == '.'){
-            updateScreen(`${screenContent}.`)
-
-        }else if (button.innerHTML == '%'){
-            func = '%';
-            firstNumber = screenContent;
-            updateScreen('0');
+            if (String(screenContent).indexOf('.') == '-1'){
+                updateScreen(`${screenContent}.`)
+            }
         }else if (button.innerHTML == '←'){
-            updateScreen(screenContent.split('').slice(0, -1).join(''));
+            updateScreen(String(screenContent).split('').slice(0, -1).join(''));
+        }else{
+            changeOprator(button.innerHTML);
         }
     })
 })
 
+function changeOprator(newOprator){
+    oprator = newOprator;
+    firstNumber = screenContent;
+    updateScreen('0');
+}
+
+function calculateResult(firstNumber, secondNumber){
+    switch (oprator) {
+        case '+':
+            return firstNumber + secondNumber;
+            break;
+
+        case '−':
+            return firstNumber - secondNumber;
+            break;
+
+        case '×':
+            return firstNumber * secondNumber;
+            break;
+         
+        case '÷':
+            return firstNumber / secondNumber;
+            break;
+
+        case '%':
+            return ((secondNumber/100) * firstNumber);
+            break;
+
+        default:
+            return 0
+            break;
+    }
+}
 
 function updateScreen(content){
     screenContent = content;
     screen.innerHTML = Number(screenContent).toLocaleString();
-    let num = 123;
 }
