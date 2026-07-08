@@ -4,7 +4,7 @@
 
 Simple calculator writtin with **html css js** that has the main feature of every calculator
 
-<div align='center'>![Banner](./assets/screenshot/screenshot.png)</div>
+![Banner](./assets/screenshot/screenshot.png)
 
 ---
 
