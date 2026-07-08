@@ -4,6 +4,10 @@
 
 Simple calculator writtin with **html css js** that has the main feature of every calculator
 
+![Banner](./assets/screenshot/screenshot.png)
+
+---
+
 ## 📑Table of content
 |Content|Link|
 |:-----:|:---|
