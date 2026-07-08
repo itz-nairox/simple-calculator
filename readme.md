@@ -1,55 +1,76 @@
-![Banner](./assets/screenshot/banner.jpg)
+"Banner" (./assets/screenshot/banner.jpg)
 
-<div align='center'><h1>🧮Calculator🧮</h1></div>
+<div align="center">
+<h1>🧮 Simple Calculator 🧮</h1>
+</div>A simple calculator built with HTML, CSS, and JavaScript. It supports the essential features of a standard calculator, including keyboard input and formatted number display.
 
-Simple calculator writtin with **html css js** that has the main feature of every calculator
-
-![Banner](./assets/screenshot/screenshot.png)
-
----
-
-## 📑Table of content
-|Content|Link|
-|:-----:|:---|
-|How to install|[Instllation](#installation)|
-|How to use it|[Useage](#useage)|
-|How to modify it|[Configuration](#Configuration)|
+"Screenshot" (./assets/screenshot/screenshot.png)
 
 ---
 
-## 🌟Features
-- Basic mathmatical expression
-- open-source and developable
+📑 Table of Contents
+
+Content| Link
+Installation| "Installation" (#installation)
+Usage| "Usage" (#usage)
+Configuration| "Configuration" (#configuration)
+Features| "Features" (#features)
 
 ---
 
-## 📩Installation
-1. `git clone https://github.com/itz-nairox/simple-calculator`
-2. `cd simple-calculator`
+🌟 Features
 
-## ⏩Quick install command
-
-> `git clone https://github.com/itz-nairox/simple-calculator && cd simple-calculator`
-
----
-
-## 🔨Useage
-1. Mouse(By clicking on buttons)
-2. Keyboard(By using number key and enter escape ...)
+- Basic arithmetic operations ("+", "-", "×", "÷", "%")
+- Keyboard support
+- Comma-separated number formatting
+- Clean and simple interface
+- Open source and easy to extend
 
 ---
 
-## 🪚Configuration
-1. The logic system is in `./assets/logic/script.js`
-2. The styling is in `./assets/style/style.css` all the color and important style are setted as variable
+📩 Installation
+
+git clone https://github.com/itz-nairox/simple-calculator
+cd simple-calculator
+
+Quick Install
+
+git clone https://github.com/itz-nairox/simple-calculator && cd simple-calculator
 
 ---
 
-|Feature|New version|Old version|
-|:-----:|:---------:|:---------:|
-|Keyboard support|:white_check_mark:|:x:
-|Comma seprated|:white_check_mark:|:x:
-|Basic oprations|:white_check_mark:|:white_check_mark:
+🚀 Usage
+
+Mouse
+
+- Click the calculator buttons.
+
+Keyboard
+
+- Numbers ("0-9")
+- Operators ("+", "-", "*", "/")
+- "Enter" → Calculate
+- "Backspace" → Delete the last digit
+- "Escape" → Clear the calculator
 
 ---
-Made with ❤️
+
+🪚 Configuration
+
+- Calculator logic: "./assets/logic/script.js"
+- Styles: "./assets/style/style.css"
+
+Most colors and reusable styles are defined as CSS variables, making customization easy.
+
+---
+
+📊 Comparison
+
+Feature| New Version| Old Version
+Keyboard Support| ✅| ❌
+Comma-separated Numbers| ✅| ❌
+Basic Arithmetic Operations| ✅| ✅
+
+---
+
+❤️ Made with love by Nairox
