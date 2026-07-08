@@ -66,10 +66,11 @@ Most colors and reusable styles are defined as CSS variables, making customizati
 
 📊 Comparison
 
-Feature| New Version| Old Version
-Keyboard Support| ✅| ❌
-Comma-separated Numbers| ✅| ❌
-Basic Arithmetic Operations| ✅| ✅
+| Feature | New Version | Old Version |
+| :------ | :---------: | :---------: |
+| Keyboard Support | ✅ | ❌ |
+| Comma-separated Numbers | ✅ | ❌ |
+| Basic Arithmetic Operations | ✅ | ✅ |
 
 ---
 
