@@ -1,10 +1,10 @@
-"Banner" (./assets/screenshot/banner.jpg)
+[Banner](./assets/screenshot/banner.jpg)
 
 <div align="center">
 <h1>🧮 Simple Calculator 🧮</h1>
 </div>A simple calculator built with HTML, CSS, and JavaScript. It supports the essential features of a standard calculator, including keyboard input and formatted number display.
 
-"Screenshot" (./assets/screenshot/screenshot.png)
+[Screenshot](./assets/screenshot/screenshot.png)
 
 ---
 
