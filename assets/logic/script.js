@@ -1,8 +1,8 @@
 //Define variables and objects
 let screen = document.querySelector('.screen');
 let numberButtons = document.querySelectorAll('.number');
-let screenContent = '0';
 let functionalButtons = document.querySelectorAll('.functional');
+let screenContent = '0';
 let oprator = '';
 let firstNumber = '';
 
@@ -10,16 +10,8 @@ let firstNumber = '';
 //Add event listener for each number button
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
-
         let buttonNumber = Number(button.innerHTML);
-
-        //Prevent two zero bug
-        if (screenContent == '0'){
-            updateScreen(buttonNumber)
-        }else{
-            updateScreen(`${screenContent}${buttonNumber}`)
-        }
-        
+        handelNumber(buttonNumber);
     })
 })
 
@@ -28,7 +20,8 @@ numberButtons.forEach(button => {
 functionalButtons.forEach(button => {
     button.addEventListener('click', () => {
         if (button.innerHTML == "C"){
-            updateScreen('0')
+            updateScreen('0');
+            firstNumber = '';
             oprator = '';
         }else if (button.innerHTML == "=" && oprator != ''){
             let secondNumber = screenContent;
@@ -47,6 +40,43 @@ functionalButtons.forEach(button => {
     })
 })
 
+
+document.addEventListener('keydown', key => {
+
+    //Check if the key is number or not
+    if (!isNaN(key.key) && key.key != ' '){
+        let inputedNumber = Number(key.key);
+        handelNumber(inputedNumber);        
+    }else{
+        switch (key.key) {
+        case 'Enter':
+            let secondNumber = screenContent;
+            result = calculateResult(firstNumber, secondNumber);
+            updateScreen(result);
+            break;
+    
+        case 'Backspace':
+            updateScreen(String(screenContent).split('').slice(0, -1).join(''));
+            break;
+
+        case 'Escape':
+            updateScreen('0');
+            firstNumber = '';
+            oprator = '';
+            break;
+
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            changeOprator(key.key);
+            break;
+    }
+    }
+    
+})
+
+
 function changeOprator(newOprator){
     oprator = newOprator;
     firstNumber = screenContent;
@@ -54,20 +84,26 @@ function changeOprator(newOprator){
 }
 
 function calculateResult(firstNumber, secondNumber){
+    firstNumber = Number(firstNumber);
+    secondNumber = Number(secondNumber);
+
     switch (oprator) {
         case '+':
             return firstNumber + secondNumber;
             break;
 
-        case '−':
+        case '−': 
+        case '-':
             return firstNumber - secondNumber;
             break;
 
         case '×':
+        case '*':
             return firstNumber * secondNumber;
             break;
          
-        case '÷':
+        case '÷': 
+        case '/':
             return firstNumber / secondNumber;
             break;
 
@@ -84,4 +120,13 @@ function calculateResult(firstNumber, secondNumber){
 function updateScreen(content){
     screenContent = content;
     screen.innerHTML = Number(screenContent).toLocaleString();
+}
+
+function handelNumber(number){
+    //Prevent two zero bug
+    if (screenContent == '0'){
+        updateScreen(number)
+    }else{
+        updateScreen(`${screenContent}${number}`)
+    }
 }
