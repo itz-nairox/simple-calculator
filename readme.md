@@ -1,49 +1,51 @@
-# 🧮 Simple Calculator
+![Banner](./assets/screenshot/banner.jpg)
 
-> A clean, responsive calculator built with HTML, CSS, and JavaScript
+<div align='center'><h1>🧮Calculator🧮</h1></div>
 
-## ✨ Features
+Simple calculator writtin with **html css js** that has the main feature of every calculator
 
-- Basic operations (+, -, ×, ÷)
-- Error handling
-- Clean UI
-
-
-## 📸 Screenshots
-
-![Calculator Screenshot](./assets/screenshot/screenshot.png)
-
-## 🛠️ Technologies
-
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-
-## 📦 Installation
-
-```bash
-git clone https://github.com/itz-vold/simple-calculator.git
-cd simple-calculator
-```
-
-Open `index.html` in your browser.
-
-## 🎯 Usage
-
-**Mouse:** Click buttons for numbers and operations.  
-
-## 📱 Responsive
-
-Works on desktop, tablet, and mobile.
-
-## 🤝 Contributing
-
-Pull requests welcome.
-
-## 📝 License
-
-MIT
+## 📑Table of content
+|Content|Link|
+|:-----:|:---|
+|How to install|[Instllation](#installation)|
+|How to use it|[Useage](#useage)|
+|How to modify it|[Configuration](#Configuration)|
 
 ---
 
+## 🌟Features
+- Basic mathmatical expression
+- open-source and developable
+
+---
+
+## 📩Installation
+1. `git clone https://github.com/itz-nairox/simple-calculator`
+2. `cd simple-calculator`
+
+## ⏩Quick install command
+
+> `git clone https://github.com/itz-nairox/simple-calculator && cd simple-calculator`
+
+---
+
+## 🔨Useage
+1. Mouse(By clicking on buttons)
+2. Keyboard(By using number key and enter escape ...)
+
+---
+
+## 🪚Configuration
+1. The logic system is in `./assets/logic/script.js`
+2. The styling is in `./assets/style/style.css` all the color and important style are setted as variable
+
+---
+
+|Feature|New version|Old version|
+|:-----:|:---------:|:---------:|
+|Keyboard support|:white_check_mark:|:x:
+|Comma seprated|:white_check_mark:|:x:
+|Basic oprations|:white_check_mark:|:white_check_mark:
+
+---
 Made with ❤️
